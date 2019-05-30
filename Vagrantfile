@@ -28,9 +28,10 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  #  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
-    config.vm.network "forwarded_port", guest: 8080, host: 8081, host_ip: "127.0.0.1"
-    config.vm.network "forwarded_port", guest: 9021, host: 19021, host_ip: "127.0.0.1"
+  #  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"        
+	config.vm.network "forwarded_port", guest: 9092, host: 9092, host_ip: "127.0.0.1"
+	config.vm.network "forwarded_port", guest: 8081, host: 8081, host_ip: "127.0.0.1"
+	config.vm.network "forwarded_port", guest: 2181, host: 2181, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -57,7 +58,7 @@ Vagrant.configure("2") do |config|
   #
   #   # Customize the amount of memory on the VM:
      vb.memory = "4096"
-     vb.cpus  = 2
+     vb.cpus  = 1
    end
   #
   # View the documentation for the provider you are using for more
